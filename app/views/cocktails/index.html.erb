@@ -1,0 +1,10 @@
+<h1>Cock & Tails List</h1>
+<h3> <%= link_to "Add a recipies", new_cocktail_path %> </h3>
+
+<% @cocktails.each do |cocktail| %>
+<ul>
+  <li><%= cocktail.name %></li>
+</ul>
+
+<% end %>
+
