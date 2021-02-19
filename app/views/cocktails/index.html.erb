@@ -1,10 +1,24 @@
-<h1>Cock & Tails List</h1>
+<h1>Cocks & Tails List</h1>
 <h3> <%= link_to "Add a recipies", new_cocktail_path %> </h3>
 
 <% @cocktails.each do |cocktail| %>
-<ul>
-  <li><%= cocktail.name %></li>
-</ul>
+<div>
+  <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
+  <table>
+    <tr>
+      <td> <% cocktail.ingredients.each do |ingredient| %>
+        <p>  <%= ingredient.name %>  </p>
+        <% end %>
+      </td>
+
+      <td> <% cocktail.doses.each do |dose| %>
+        <p>  <%= dose.description %>  </p>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+
+</div>
 
 <% end %>
 

@@ -1,0 +1,4 @@
+<h1>Add a new ingredients</h1>
+<%= render 'form', dose: @dose %>
+<%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail) %>
+<%= link_to "I don't want to creat, I'm too scare", cocktail_path(@cocktail) %>

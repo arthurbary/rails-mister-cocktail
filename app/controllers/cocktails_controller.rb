@@ -15,8 +15,8 @@ class CocktailsController < ApplicationController
   def create
     @cocktail = Cocktail.new(cocktail_params)
 
-    if @cocktail.save!
-      redirect_to @cocktail, notice: "Don't forget the magic touch : the roofie!"
+    if @cocktail.save
+      redirect_to cocktail_path(@cocktail), notice: "Cocktail added to Cocks & Tails"
     else
       render :new
     end

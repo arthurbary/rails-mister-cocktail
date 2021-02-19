@@ -1,1 +1,24 @@
 <h1> <%= @cocktail.name %> </h1>
+<table>
+  <thead>
+    <th>
+      <strong>Ingredient</strong>
+    </th>
+    <th>
+      <strong>Dose</strong>
+    </th>
+  </thead>
+  <tbody>
+    <% @cocktail.doses.each do |dose| %>
+    <tr>
+      <td><%= dose.ingredient.name %></td>
+      <td><%= dose.description %> </td>
+      <td> <%= link_to "Delete", dose_path(dose), method: 'delete' %> </td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail) %>
+
+<%= link_to "Let see all the cocktails", cocktails_path %>
